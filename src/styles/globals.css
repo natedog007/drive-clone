@@ -38,14 +38,14 @@
   --sidebar-border: oklch(0.9 0 0);
   --sidebar-ring: oklch(0.7 0.05 0);
   
-  /* File type colors */
-  --pdf-color: oklch(0.6 0.25 15); /* Red */
-  --screenshot-color: oklch(0.65 0.15 127); /* Green */
-  --video-color: oklch(0.7 0.15 85); /* Yellow */
-  --audio-color: oklch(0.65 0.2 300); /* Purple */
-  --zip-color: oklch(0.6 0.15 40); /* Orange-red */
-  --doc-color: oklch(0.65 0.2 240); /* Blue */
-  --powerpoint-color: oklch(0.7 0.2 50); /* Orange */
+  /* File type colors - More Vibrant */
+  --pdf-color: oklch(0.6 0.35 15); /* Vibrant Red */
+  --screenshot-color: oklch(0.65 0.25 127); /* Vibrant Green */
+  --video-color: oklch(0.75 0.25 85); /* Vibrant Yellow */
+  --audio-color: oklch(0.65 0.3 300); /* Vibrant Purple */
+  --zip-color: oklch(0.65 0.25 40); /* Vibrant Orange-red */
+  --doc-color: oklch(0.65 0.3 240); /* Vibrant Blue */
+  --powerpoint-color: oklch(0.7 0.3 50); /* Vibrant Orange */
 }
 
 .dark {
@@ -82,14 +82,14 @@
   --sidebar-border: oklch(0.25 0 0);
   --sidebar-ring: oklch(0.7 0.05 0);
   
-  /* File type colors */
-  --pdf-color: oklch(0.6 0.25 15); /* Red */
-  --screenshot-color: oklch(0.65 0.15 127); /* Green */
-  --video-color: oklch(0.7 0.15 85); /* Yellow */
-  --audio-color: oklch(0.65 0.2 300); /* Purple */
-  --zip-color: oklch(0.6 0.15 40); /* Orange-red */
-  --doc-color: oklch(0.65 0.2 240); /* Blue */
-  --powerpoint-color: oklch(0.7 0.2 50); /* Orange */
+  /* File type colors - More Vibrant */
+  --pdf-color: oklch(0.65 0.35 15); /* Vibrant Red */
+  --screenshot-color: oklch(0.7 0.25 127); /* Vibrant Green */
+  --video-color: oklch(0.8 0.25 85); /* Vibrant Yellow */
+  --audio-color: oklch(0.7 0.3 300); /* Vibrant Purple */
+  --zip-color: oklch(0.7 0.25 40); /* Vibrant Orange-red */
+  --doc-color: oklch(0.7 0.3 240); /* Vibrant Blue */
+  --powerpoint-color: oklch(0.75 0.3 50); /* Vibrant Orange */
 }
 
 @theme inline {
