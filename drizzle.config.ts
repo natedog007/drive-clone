@@ -1,12 +1,10 @@
 import { type Config } from "drizzle-kit";
 
-import { env } from "@/env";
-
 export default {
   schema: "./src/server/db/schema.ts",
   dialect: "sqlite",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: process.env.DATABASE_URL || "file:./sqlite.db",
   },
   tablesFilter: ["drive-clone_*"],
-} satisfies Config;
+} as Config;
