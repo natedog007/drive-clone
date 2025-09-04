@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [] Setup Database and Datemodel
-- [] Move folder open state URL
-- [] Add Authentication
-- [] Add file upload
+- [ ] Setup Database and Datemodel
+- [ ] Move folder open state URL
+- [ ] Add Authentication
+- [ ] Add file upload
 
 
