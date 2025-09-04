@@ -77,6 +77,24 @@ const mockData: FileItem[] = [
     modified: "1 week ago",
     url: "#",
   },
+  {
+    id: "10",
+    name: "Document.docx",
+    type: "file",
+    fileType: "document",
+    size: "845 KB",
+    modified: "3 hours ago",
+    url: "#",
+  },
+  {
+    id: "11",
+    name: "Meeting_slides.pptx",
+    type: "file",
+    fileType: "document",
+    size: "3.2 MB",
+    modified: "5 hours ago",
+    url: "#",
+  },
 ]
 
 const folderContents: Record<string, FileItem[]> = {
@@ -148,20 +166,51 @@ export function DriveClone() {
       return <Folder className="h-8 w-8 text-accent" />
     }
 
-    switch (item.fileType) {
-      case "document":
-        return <FileText className="h-8 w-8 text-blue-500" />
-      case "image":
-        return <ImageIcon className="h-8 w-8 text-green-500" />
-      case "video":
-        return <Video className="h-8 w-8 text-red-500" />
-      case "audio":
-        return <Music className="h-8 w-8 text-purple-500" />
-      case "archive":
-        return <Archive className="h-8 w-8 text-orange-500" />
-      default:
-        return <FileText className="h-8 w-8 text-muted-foreground" />
+    // Get file extension
+    const extension = item.name.split('.').pop()?.toLowerCase()
+    
+    // PDFs - Red
+    if (extension === 'pdf') {
+      return <FileText className="h-8 w-8 file-pdf" />
     }
+    
+    // Screenshots - Green (keep existing green)
+    if (item.name.toLowerCase().includes('screenshot') || extension === 'png' && item.name.toLowerCase().includes('screen')) {
+      return <ImageIcon className="h-8 w-8 file-screenshot" />
+    }
+    
+    // Videos - Yellow
+    if (['mp4', 'avi', 'mov', 'mkv', 'webm'].includes(extension || '')) {
+      return <Video className="h-8 w-8 file-video" />
+    }
+    
+    // Audio - Purple (keep existing purple)
+    if (['mp3', 'wav', 'flac', 'aac', 'm4a'].includes(extension || '')) {
+      return <Music className="h-8 w-8 file-audio" />
+    }
+    
+    // Zip files - Orange-red
+    if (['zip', 'rar', '7z', 'tar', 'gz'].includes(extension || '')) {
+      return <Archive className="h-8 w-8 file-zip" />
+    }
+    
+    // Word/Doc files - Blue
+    if (['doc', 'docx', 'txt', 'md'].includes(extension || '')) {
+      return <FileText className="h-8 w-8 file-doc" />
+    }
+    
+    // PowerPoint/Slides - Orange
+    if (['ppt', 'pptx'].includes(extension || '')) {
+      return <FileText className="h-8 w-8 file-powerpoint" />
+    }
+    
+    // Images (general) - Green
+    if (['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg'].includes(extension || '')) {
+      return <ImageIcon className="h-8 w-8 file-screenshot" />
+    }
+
+    // Default - White/Accent color
+    return <FileText className="h-8 w-8 text-accent" />
   }
 
   const handleItemClick = (item: FileItem) => {

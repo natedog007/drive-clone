@@ -12,19 +12,19 @@
   --popover-foreground: oklch(0.15 0 0);
   --primary: oklch(0.35 0 0);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.65 0.2 240);
+  --secondary: oklch(0.95 0 0);
   --secondary-foreground: oklch(0.15 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.65 0.2 240);
+  --accent: oklch(0.95 0 0);
   --accent-foreground: oklch(0.15 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.98 0 0);
-  --ring: oklch(0.65 0.2 240);
+  --ring: oklch(0.7 0.05 0);
   --chart-1: oklch(0.35 0 0);
-  --chart-2: oklch(0.65 0.2 240);
+  --chart-2: oklch(0.95 0 0);
   --chart-3: oklch(0.577 0.245 27.325);
   --chart-4: oklch(0.45 0 0);
   --chart-5: oklch(0.7 0.2 85);
@@ -33,10 +33,19 @@
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: oklch(0.35 0 0);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.65 0.2 240);
+  --sidebar-accent: oklch(0.95 0 0);
   --sidebar-accent-foreground: oklch(0.15 0 0);
   --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.65 0.2 240);
+  --sidebar-ring: oklch(0.7 0.05 0);
+  
+  /* File type colors */
+  --pdf-color: oklch(0.6 0.25 15); /* Red */
+  --screenshot-color: oklch(0.65 0.15 127); /* Green */
+  --video-color: oklch(0.7 0.15 85); /* Yellow */
+  --audio-color: oklch(0.65 0.2 300); /* Purple */
+  --zip-color: oklch(0.6 0.15 40); /* Orange-red */
+  --doc-color: oklch(0.65 0.2 240); /* Blue */
+  --powerpoint-color: oklch(0.7 0.2 50); /* Orange */
 }
 
 .dark {
@@ -48,30 +57,39 @@
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.98 0 0);
   --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.65 0.2 240);
+  --secondary: oklch(0.8 0 0);
   --secondary-foreground: oklch(0.12 0 0);
   --muted: oklch(0.25 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.65 0.2 240);
+  --accent: oklch(0.8 0 0);
   --accent-foreground: oklch(0.12 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.25 0 0);
   --input: oklch(0.25 0 0);
-  --ring: oklch(0.65 0.2 240);
+  --ring: oklch(0.7 0.05 0);
   --chart-1: oklch(0.35 0 0);
-  --chart-2: oklch(0.65 0.2 240);
+  --chart-2: oklch(0.8 0 0);
   --chart-3: oklch(0.577 0.245 27.325);
   --chart-4: oklch(0.7 0 0);
   --chart-5: oklch(0.7 0.2 85);
   --sidebar: oklch(0.18 0 0);
   --sidebar-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.65 0.2 240);
+  --sidebar-primary: oklch(0.8 0 0);
   --sidebar-primary-foreground: oklch(0.12 0 0);
   --sidebar-accent: oklch(0.25 0 0);
   --sidebar-accent-foreground: oklch(0.98 0 0);
   --sidebar-border: oklch(0.25 0 0);
-  --sidebar-ring: oklch(0.65 0.2 240);
+  --sidebar-ring: oklch(0.7 0.05 0);
+  
+  /* File type colors */
+  --pdf-color: oklch(0.6 0.25 15); /* Red */
+  --screenshot-color: oklch(0.65 0.15 127); /* Green */
+  --video-color: oklch(0.7 0.15 85); /* Yellow */
+  --audio-color: oklch(0.65 0.2 300); /* Purple */
+  --zip-color: oklch(0.6 0.15 40); /* Orange-red */
+  --doc-color: oklch(0.65 0.2 240); /* Blue */
+  --powerpoint-color: oklch(0.7 0.2 50); /* Orange */
 }
 
 @theme inline {
@@ -122,4 +140,13 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* File type color classes */
+  .file-pdf { color: var(--pdf-color); }
+  .file-screenshot { color: var(--screenshot-color); }
+  .file-video { color: var(--video-color); }
+  .file-audio { color: var(--audio-color); }
+  .file-zip { color: var(--zip-color); }
+  .file-doc { color: var(--doc-color); }
+  .file-powerpoint { color: var(--powerpoint-color); }
 }
